@@ -8,16 +8,17 @@ A documentation of useful tricks, formulas, and other helpers for efficiency, co
 
 ### Stagger loop
 **$n:** = intiger; Set the count of loops you want to complete
+
 **$x:** = intiger; prints the loop count
 
 ```
 $n: 5;
 
 @for $x from 2 through $n {
-	&:nth-child( #{ $x } ) { // 2, 3, …
-		animation-delay: $x * 100ms; // do something…
+	&:nth-child( #{ $x } ) {
+		animation-delay: $x * 100ms;
 
-		@content // bonus! Have something else to add
+		@content
 	}
 }
 ```
@@ -27,7 +28,7 @@ $n: 5;
 ```
 @for $x from 1 through ( $n - 1 ) {
 	&:nth-child( #{ $x } ) {
-		animation-delay: ( $n - $x ) * 120ms; // 4, 3, …
+		animation-delay: ( $n - $x ) * 120ms;
 	}
 }
 ```
