@@ -4,27 +4,88 @@ A documentation of useful tricks, formulas, and other helpers for efficiency, co
 
 ---
 
-## Loops
+## Concatenation
+```
+$foo: 'serif';
 
-### Stagger loop
-**$n:** = intiger; Set the count of loops you want to complete
+.bar {
+	$font: 'sans-' + $foo; // 'sans-serif'
+}
+```
+## Mixins
+```
+@mixin foo( $bar, $baz: false ) {
+  color: $bar;
+  @if baz {
+    border-width: $baz;
+  }
+}
 
-**$x:** = intiger; prints the loop count
+.qux {
+  @include foo( #1e90ff, 2px );
+}
+```
+
+#### Variable Arguments
+```
+@mixin bar( $baz... ) {
+  box-shadow: $baz
+}
+
+.qux {
+  $baz: 0 0 2px #333, 0 0 4px #666, 0 0 8px #999;
+  @include bar( $baz );
+}
+```
+
+## Control Directives
+
+if, if else, else
+
+**for loop**
 
 ```
-$n: 5;
+$foo: bar;
+
+.qux {
+  @if $foo == bar {
+     color: #000;
+  } @else if $foo == baz {
+    color: #fff;
+   } @else {
+     color: #999;
+   }
+}
+
+.qux {
+	color: if($foo == bar, #000, #999); // if([condition], [if true], [else])
+}
+```
+
+or here's a doozy…
+
+```
+$foo: "foo";
+$bar: "bar";
+$qux: "qux";
+
+@if ($foo == "foo" and not ($bar == "bar")) or ($qux == "qux") {
+  // first condition is false, second condition is true
+}
+```
+
+## Stagger loop
+```
+$n: 5; // $n = intiger - Sets the number of loops to complete
 
 @for $x from 2 through $n {
 	&:nth-child( #{ $x } ) {
-		animation-delay: $x * 100ms;
-
-		@content
+		animation-delay: $x * 100ms; // $x = intiger - prints the loop count
 	}
 }
 ```
 
-### Stagger loop - reverse
-
+## Stagger loop - reverse
 ```
 @for $x from 1 through ( $n - 1 ) {
 	&:nth-child( #{ $x } ) {
