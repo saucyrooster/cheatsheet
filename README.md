@@ -75,11 +75,7 @@ $qux: "qux";
   // first condition is false, second condition is true
 }
 ```
-[]: # (This is a comment)
-[]: # "And this is a comment"
-[]: # 'Also this is a comment'
-[//]: # (Yet another comment)
-[comment]: # (Still another comment)
+
 ## Stagger loop
 ```
 // @see https://github.com/saucyrooster/cheatsheet#stagger-loop
