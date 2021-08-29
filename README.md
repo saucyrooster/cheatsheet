@@ -79,6 +79,7 @@ $qux: "qux";
 ## Stagger loop
 ```
 // @see https://github.com/saucyrooster/cheatsheet#stagger-loop
+<!--@see https://github.com/saucyrooster/cheatsheet#stagger-loop-->
 <!-- @see https://github.com/saucyrooster/cheatsheet#stagger-loop -->
 <!--- @see https://github.com/saucyrooster/cheatsheet#stagger-loop --->
 $n: 5; // $n = intiger - Sets the number of loops to complete
