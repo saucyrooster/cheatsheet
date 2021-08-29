@@ -81,7 +81,11 @@ $qux: "qux";
 // @see https://github.com/saucyrooster/cheatsheet#stagger-loop
 
 [//]: # (This is a comment.)  
+
+
 [//]: # (This is a comment on a new line.)  
+
+<!-- + text + -->
 
 $n: 5; // $n = intiger - Sets the number of loops to complete
 
