@@ -6,10 +6,10 @@ A documentation of useful tricks, formulas, and other helpers for efficiency, co
 
 ## Concatenation
 ```
-$foo: 'serif';
+$foo: 'condensed';
 
 .bar {
-	$font: 'sans-' + $foo; // 'sans-serif'
+	$font: 'barlow-' + $foo; // 'barlow-condensed'
 }
 ```
 ## Mixins
@@ -28,6 +28,7 @@ $foo: 'serif';
 
 #### Variable Arguments
 ```
+// @see https://github.com/saucyrooster/cheatsheet#variable-arguments
 @mixin bar( $baz... ) {
   box-shadow: $baz
 }
@@ -45,6 +46,7 @@ if, if else, else
 **for loop**
 
 ```
+// @see https://github.com/saucyrooster/cheatsheet#control-directives
 $foo: bar;
 
 .qux {
@@ -76,6 +78,7 @@ $qux: "qux";
 
 ## Stagger loop
 ```
+// @see https://github.com/saucyrooster/cheatsheet#stagger-loop
 $n: 5; // $n = intiger - Sets the number of loops to complete
 
 @for $x from 2 through $n {
@@ -87,6 +90,7 @@ $n: 5; // $n = intiger - Sets the number of loops to complete
 
 ## Stagger loop - reverse
 ```
+// @see https://github.com/saucyrooster/cheatsheet#stagger-loop---reverse
 @for $x from 1 through ( $n - 1 ) {
 	&:nth-child( #{ $x } ) {
 		animation-delay: ( $n - $x ) * 120ms;
